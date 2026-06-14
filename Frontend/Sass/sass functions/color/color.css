@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.rgb {
+  background: rgb(194, 193, 193);
+  padding: 10px;
+}
+
+.rgba {
+  background: rgba(194, 193, 193, 0.2);
+  padding: 10px;
+}
+
+/* hsl ( hue , saturation , ligtness ) - hue - это угол колеса цвета от ( 0 до 360 ) 
+0 or 360 is red, 120 is green, 240 is blue. Saturation это процентный значение;  0% means a shade of gray 
+and 100% is the full color. Lightness is also a percentage; 0% is black, 100% is white.
+*/
+.hsl {
+  background: hsl(210, 30%, 80%);
+  padding: 10px;
+}
+
+/* hsla ( hue , saturation , ligtness , alpha ) - hue - это угол колеса цвета от ( 0 до 360 ) 
+0 or 360 is red, 120 is green, 240 is blue. Saturation это процентный значение;  0% means a shade of gray 
+and 100% is the full color. Lightness is also a percentage; 0% is black, 100% is white + прозрачность.
+*/
+.hsla {
+  background: hsla(210, 30%, 80%, 0.2);
+  padding: 10px;
+}
+
+.rgba--differ {
+  background: rgba(188.7, 204, 219.3, 0.5);
+}
+
+.adjust {
+  padding: 10px;
+  background: hsl(239.84375, 190%, 94.9019607843%);
+}
+
+.change {
+  padding: 10px;
+  background: hsl(239.84375, 190%, 94.9019607843%);
+}/*# sourceMappingURL=color.css.map */

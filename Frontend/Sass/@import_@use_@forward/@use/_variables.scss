@@ -1,0 +1,15 @@
+$my-color:red;
+
+@mixin myButton {
+    border: none;
+    background: silver;
+    color: white;
+    border-radius: 5px;
+}
+
+%placeholder {
+    cursor: pointer;
+    &:hover {
+        background: gray;
+    }
+}

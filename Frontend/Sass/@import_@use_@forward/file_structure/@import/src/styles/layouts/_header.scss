@@ -1,0 +1,8 @@
+.header {
+    background: silver;
+    padding:10px 0;
+    
+    @include mobile {
+        background: green;
+    }
+}

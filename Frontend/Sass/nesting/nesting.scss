@@ -1,0 +1,44 @@
+//  ------------------------------ Nesting ---------------------------------------------------------- //
+
+/*
+    Sass позволяет вложить селекторы как мы делаем в HTML
+*/
+
+// css selecting:
+div > p > span {
+    border: 1px solid red;
+}
+
+div span {
+    background: green;
+}
+
+// sass nesting:
+div {
+    p {
+        span {
+            border: 1px solid red;
+        }
+    }
+}
+
+div {
+    span {
+        background: green;
+    }
+}
+
+// Nested Properties:
+/*
+    Если prefix классов иммет одинаковые названия то можно
+    их записать как nested свойств. К такми свойствам относятся
+    font-family , font-size , font-wight и др.
+*/
+
+i {
+    font: {
+        size: 40px;
+        weight:900;
+        family:sans-serif;
+    }
+}

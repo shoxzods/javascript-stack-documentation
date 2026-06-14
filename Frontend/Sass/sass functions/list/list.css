@@ -1,0 +1,48 @@
+div {
+  background: linear-gradient(to left, red, green, blue);
+}
+
+div {
+  border: 2px solid red;
+}
+
+div {
+  font-size: 2rem;
+}
+
+input[type=text] {
+  color: red;
+}
+
+p {
+  background: linear-gradient(to top, green, red, yellow, silver);
+}
+
+.list__1 {
+  font-size: 20px;
+}
+
+.list__2 {
+  font-size: 24px;
+}
+
+.list__3 {
+  font-size: 30px;
+}
+
+span {
+  border: 1px solid red;
+  display: block;
+}
+
+i {
+  border: 2px dotted green;
+}
+
+em {
+  background: linear-gradient(to left, red, green, yellow);
+}
+
+p {
+  color: true;
+}/*# sourceMappingURL=list.css.map */

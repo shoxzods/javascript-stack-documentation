@@ -1,0 +1,61 @@
+@use "sass:string"; // string module
+
+// quote($string) - добавляет '' - quote к знаениям.
+$str: before;
+
+p {
+    &::before {
+        content: string.quote($str);
+    }
+}
+
+// unquote($string) - убирает '' -  quote из строки. quote не превращает в list;
+
+$string: 'red , green , blue';
+$newString: string.unquote($string);
+
+p {
+    background: linear-gradient( to left, $newString );
+}
+
+// length($string) - показывает длину строки.
+p {
+    font-size: string.length($str)*1rem;
+}
+
+// to-lower-case($string: "") - сделает регистер нижним
+
+b {
+    &::after {
+        content: string.to-lower-case($string: "after");
+    }
+}
+
+// to-upper-case($string: "") - сделает регистер нижним
+b {
+    &::before {
+        content: string.to-upper-case($string: "brefore");
+    }
+}
+
+// slice($string, $start, $end) - нужна чтобы обрезать нучнжую часть 
+b {
+    color: string.unquote(string.slice("reddish", 0 , 3));
+}
+
+// insert($string , $insert , $index) -  используется для того чтобы поместить новый string в определенный index.
+$gradientColor: "red , green";
+
+b {
+    background: linear-gradient(to top , string.unquote(string.insert($gradientColor , ",blue" ,  4 )));
+    padding: 10px;
+}
+
+// index() - возврашает index второго параметра если оно существует в первом параметре.
+$my-app: 'red green blue';
+$lastIndex: string.index( $my-app , "d");
+
+div {
+    margin-top: 20px;
+    color: string.unquote(string.slice($my-app , 1 , $lastIndex));
+}

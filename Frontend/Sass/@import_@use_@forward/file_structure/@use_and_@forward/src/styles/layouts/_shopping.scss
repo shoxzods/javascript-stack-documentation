@@ -1,0 +1,46 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixin";
+@use 'sass:list';
+@use 'sass:map';
+
+$myList: (
+    red: red, // 1
+    green:green, // 2
+    yellow:yellow, // 3
+    silver:silver // 4
+);
+
+.layout-shoping {
+    background: variables.$primaryColor;
+    color: white;
+    margin:50px 0 0 0;
+    padding: 20px 0;
+}
+
+.shopping {
+    display: flex;
+    justify-content: space-between;
+
+    &__cards {
+        border: 1px solid silver;
+        padding: 20px;
+        cursor: pointer;
+
+        $i: 1;
+        $personalList: map-keys($myList);
+
+        @while $i <= length($personalList) {
+            @if $i % 2 == 0 {
+                &--#{list.nth($personalList , $i)} {
+                    @include mixin.cardsStyle(map-get($myList , list.nth($personalList , $i) ) , -20px);
+            }
+            } @else {
+                &--#{list.nth($personalList , $i)} {
+                    @include mixin.cardsStyle(map-get($myList , list.nth($personalList , $i) ) , 20px);
+                }
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

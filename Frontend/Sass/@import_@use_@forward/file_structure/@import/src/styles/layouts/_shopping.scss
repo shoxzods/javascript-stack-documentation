@@ -1,0 +1,33 @@
+.layout-shoping {
+    background: $primaryColor;
+    color: white;
+    margin:50px 0 0 0;
+    padding: 20px 0;
+}
+
+.shopping {
+    display: flex;
+    justify-content: space-between;
+
+    &__cards {
+        border: 1px solid silver;
+        padding: 20px;
+        cursor: pointer;
+        
+        &--red {
+            @include cardsStyle(red , 20px);
+        }
+
+        &--green {
+            @include cardsStyle(green , -20px);
+        }
+
+        &--yellow {
+            @include cardsStyle(yellow , 20px);
+        }
+
+        &--silver {
+            @include cardsStyle(silver , -20px);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+// ---------------------- @function and @return ------------------------------------------------ //
+
+/*
+    @function используется напсиания логики внутри него и испольщовать повторно:
+
+    @return используется чтобы возврашать значение 
+
+*/ 
+
+@function same($borderWidth , $borderStyle , $borderColor) {
+    @return $borderWidth $borderStyle $borderColor
+};
+
+@function forColor() {
+    @return 40px solid red
+}
+
+
+$num:1;
+
+.sameBtn {
+    border: same(10px , solid , red);
+    font-size:nth(forColor() , 1)
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*
+    Browser Support: Edge/IE (from IE 8), Firefox, Chrome, Safari, Opera.
+
+    Browser не понимает sass и поэтому нам приходится компилировать sass в css.
+
+    // live compiling:
+    Чтобы транслировать sass прямо в css нам надо скачать extension (Live Sass Compiler) и чтобы настроить расположение файла нам надо 
+    настроить settings.json в папке .vscode.
+
+    // using vite:
+    Есть второй способ использования scss без компиляции это установка сборшика vite который подерживает автоматическо компиляцию sass
+    в css чтобы использовать его надо установить sass: 
+        *npm install sass
+
+    И чтобы работать с sass напрямую нам приходится импортировать sass в js и использовать только там.
+*/
+p {
+  color: red;
+}/*# sourceMappingURL=installing.css.map */

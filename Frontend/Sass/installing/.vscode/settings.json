@@ -1,0 +1,28 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",   // expanded при разработке / compressed минифицированный для продакшна
+      "extensionName": ".css", // .css - для expanded / .min.css минифицированный для продкашна
+      "savePath": "/dist/css" 
+    }
+  ],
+
+  // Автопрефиксер
+  "liveSassCompile.settings.autoprefix": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
+
+  // Source maps для DevTools
+  "liveSassCompile.settings.generateMap": true,
+
+  // Не лезть в node_modules
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    "**/.git/**"
+  ],
+
+  // Dart Sass вместо устаревшего LibSass
+  "liveSassCompile.settings.useNewCompiler": true
+}

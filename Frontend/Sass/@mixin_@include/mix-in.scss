@@ -1,0 +1,48 @@
+// ------------------------------- mixin ---------------------------------------------- //
+
+/*
+    @mixin - помогает периспользовать компоненты для разных классов в website.
+    @include - чтобы вызвать @mixin мы используем @include.
+    
+    @mixin в отличие от %placeholder дублирует коды в css:
+    .close {
+        color:red;
+        background:white
+    }
+
+    .open {
+        color:red;
+        background:white
+    }
+*/
+
+@mixin ButtonName {
+    background:green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.click {
+    @include ButtonName();
+}
+
+.close {
+    @include ButtonName();
+    box-shadow: 1px 1px 1px greenyellow,
+                -1px -1px 10px greenyellow;
+}
+
+// а также для @mixn мы можем задать параметры как у функции и для этого мы используем $
+
+@mixin differentColor($color) {
+    color: $color;
+}
+
+.click {
+    @include differentColor(red);
+}
+
+.close {
+    @include differentColor(blue);
+}

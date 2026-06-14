@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Alien+Block&family=Black+Ops+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+select {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+
+img {
+  height: auto;
+  width: 10%;
+}
+
+button {
+  border: none;
+}
+
+body {
+  font-family: "Black Ops One", sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 48px;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 36px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+h5 {
+  font-style: 500;
+  font-size: 18px;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.95);
+}
+button:hover {
+  opacity: 0.7;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+.list__items {
+  cursor: pointer;
+}
+
+.header {
+  background: silver;
+  padding: 10px 0;
+}
+@media (min-width: 320px) {
+  .header {
+    background: green;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products {
+  background: rgb(135, 12, 12);
+  padding: 40px 0;
+}
+
+.footer {
+  background: green;
+  padding: 10px 0;
+  color: white;
+}/*# sourceMappingURL=home.css.map */

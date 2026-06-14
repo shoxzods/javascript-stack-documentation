@@ -1,0 +1,32 @@
+
+// @use и @forward
+
+/*
+    @use и @forward это совремеенный способ импортирования вместо @import , 
+
+    @use решает проблемы с переимпортирование файлов она в оснвном работает только в тех файлах который был вызван
+    и счмтается безопасным.
+
+    @forward помогает @use чтобы все собрать в один файл. вместо @import импортирования весь файл в один 
+*/
+
+@use "./variables";  // prefix
+@use "./mixin" as *; // pseudonime
+@use "./functions" as myFunc; // custom prefix
+
+// Без псевдонима с префиксом.
+
+span {
+    color: variables.$my-color;
+}
+
+.myBtn {
+    @include variables.myButton;
+    @extend %placeholder
+};
+
+// c псевдонимом *:
+.removeBtn {
+    @extend %nyButton;
+    color:myFunc.customColor(red);
+}

@@ -1,0 +1,14 @@
+$color:rgba(109, 44, 44, 0.5);
+
+%placeholder {
+    border: 1px solid red;
+}
+
+@mixin myButton($text-position) {
+    text-align: $text-position;
+}
+
+@function cursor($type) {
+    @return $type
+}
+

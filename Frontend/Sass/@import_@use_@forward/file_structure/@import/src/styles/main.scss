@@ -1,0 +1,23 @@
+// main используется если только одна страница если их много то лучше использовать папку /pages
+
+// base:
+@import "./base/reset";
+@import "./base/typography";
+
+// abstracts:
+@import "./abstracts/variables";
+@import "./abstracts/mixin";
+@import "./abstracts/placeholder";
+@import "./abstracts/breakpoints";
+
+// components:
+@import "./components/lists";
+@import "./components/buttons";
+
+// layouts:
+@import "./layouts/container";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/shopping";
+@import "./layouts/contacts";
+@import "./layouts/footer";

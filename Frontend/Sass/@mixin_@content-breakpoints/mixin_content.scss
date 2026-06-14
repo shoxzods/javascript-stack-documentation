@@ -1,0 +1,33 @@
+// -------------------------------------- @mixin and "сщтеуте ------------------------------ // 
+
+/*
+    Данный подход применяется для упрошения написания медиа.
+
+    @content - здесь используется как крчуок чтобы внутри него можно вызвать @include
+*/
+
+
+@mixin mobile {
+    @media (max-width:640px) {
+        @content
+    }
+}
+
+.myButton {
+    background: silver;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+    color: white;
+    box-shadow: 1px 1px 2px silver;
+
+    &:active {
+        transform: scale(1.1);
+    }
+
+    @include mobile {
+        background: red;
+    }
+}

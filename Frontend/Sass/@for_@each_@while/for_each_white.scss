@@ -1,0 +1,138 @@
+// --------------------------------------- @for @each @while  ----------------------------------------------- //
+
+/*
+    @for , @each , @while используется для автоматизации перенаписания одинаковых классов.
+*/
+
+
+// @each - работает без индексов
+// #{} - интерполяция испольщуется когда нужна вставить переменную в название.
+
+
+// lists:
+$list: first , second , third;
+
+@each $item in $list {
+    .list__#{$item} {
+        color: red;
+        list-style: none;
+        transition: 0.1s all;
+        padding: 4px;
+
+        &:hover {
+            background: silver;
+            cursor: pointer;
+        }
+    }
+}
+
+// map:
+$map: (
+  red:red,
+  green:green,
+  blue:blue
+);
+
+@each $key , $value  in $map {
+    .ol__#{$key} {
+        color: $value;
+        list-style: none;
+    }
+}
+
+// size:
+$sizes: (
+  sm 8px  4px,
+  md 16px 8px,
+  lg 24px 12px
+);
+
+@each $name, $font, $padding in $sizes {
+  .btn-#{$name} {
+    font-size: $font;
+    padding: $padding;
+  }
+}
+
+
+// @for - используется если мы хотим сами назначить промежуток. используется только с числами.
+
+.block {
+    display: flex;
+    gap: 10px;
+}
+
+@for $i from 1 through 3 {
+    .block__#{$i} {
+        color: red;
+        font-size: 1rem * $i;
+    }
+}
+
+// @while используется для обоих случаев.
+
+$j: 1;
+
+@while $j <= 3 {
+    .i_#{$j} {
+        color:red
+    }
+
+    $j: $j + 2;
+}
+
+
+// lists: nth( list , index ) => list[index]
+$primary: red green blue;
+
+$k:1;
+@while $k <= length($primary) {
+
+ .i_#{$k} {
+    background: nth($primary , $k)
+ }
+
+  $k: $k + 1;
+}
+
+// map:
+
+$colors: (
+  primary:   #3498db,
+  secondary: #2ecc71,
+  danger:    #e74c3c
+);
+
+$keys: map-keys($colors); // $list: primary , secondary , danger;
+
+$r:1;
+@while $r <= length($keys) {
+    .mall_#{$r} {
+        color:map-get($colors, nth($keys , $r));
+    }
+    $r: $r + 2;
+}
+
+// sizes:
+$sizes: (
+  8px  4px,
+  16px 8px,
+  24px 12px
+);
+
+$p: 1;
+@while $p <= length($sizes) {
+    
+    $maps: nth($sizes , $p ); // sm 8px 4px;
+
+    $first: nth($maps , 1 ); // 8px
+    $second: nth($maps , 2 ); // 4px
+
+    .mall_#{$p} {
+        padding:$first;
+        font-size:$second; 
+        background: green;
+    }
+
+    $p: $p + 1;
+} 

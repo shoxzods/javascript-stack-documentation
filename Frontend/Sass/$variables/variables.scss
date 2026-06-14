@@ -1,0 +1,53 @@
+//  ------------------------- variables ------------------------------------------------------- //
+
+/*
+    переменные scss которые храняет значения своств.
+    Используется для повторного назначения значения свойст.
+    И она используется как variable в программных языках.
+
+    в sass variables можно сохранить такие данные как:
+        string,
+        number, 
+        booelan,
+        lists,
+        null
+
+    для назанчения переменных , sass использует $ ключевое слово.
+*/
+
+$primaryColor:red;
+$textColor:white;
+
+div {
+    background: $primaryColor;
+    color:$textColor;
+}
+
+
+// !global
+/*
+    У sass variable существует block scope - это означет что если переменная
+    обявлена внутри класса то он не может работать вне его
+*/
+
+.block-scope {
+    $borderScale:1px solid red;
+    border: $borderScale;
+}
+
+span { // $borderScale здесь не работает из за того что он обялвен внутри block
+    // border: $borderScale;
+}
+
+/*
+    И чтобы предотвратить данную проблему мы используем !global  - Означает что переменная обявлена 
+    глобально.
+*/
+
+.block-scope {
+    $textSize: 100px !global;
+}
+
+span {
+    font-size: $textSize;
+}

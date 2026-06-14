@@ -1,0 +1,96 @@
+@use "sass:map";
+
+// get($map , $key) - возвращает значение от maps через $key.
+
+$maps: (
+    red: red,
+    green:green,
+    yellow:yellow
+);
+
+p {
+    color:map.get($maps , green);
+}
+
+// has-key($map , $key) - возвршает true если $key сушествует у $map
+
+$myMap: (
+    ms:16px,
+    xl:24px,
+    2xl:40px,
+);
+
+p {
+    @if map.has-key($myMap , 2xl )  {
+       font-size: 40px;
+    }
+}
+
+// keys($map) - возвращает $keys от $map
+
+$fontMap: (
+    ms:16px,
+    xl:24px,
+    2xl:40px,
+);
+
+$keyList: map.keys($fontMap);
+
+p {  
+@each $i in $keyList {
+    @if map.get($fontMap , $i) == 16px {
+        height: map.get($fontMap , $i);
+        border: 1px solid red;
+    } @else if map.get($fontMap , $i) == 40px {
+        width:map.get($fontMap , $i);
+    }
+}
+}
+
+// values($map)
+$getValues: (
+    literals: red
+);
+
+span {
+  color: map.values($getValues);  
+}
+
+
+// merge($map1 , $map2) - соединяет два map в один общий map
+
+$map1: (
+    color1:red,
+    color2:green,
+    color3:yellow
+);
+
+$map2: (
+    color3:blue,
+    color4:silver,
+    color5:black
+);
+
+$merged: map.merge($map1 , $map2);
+
+@each $key , $value in $merged {
+    .list-#{$key} {
+        color:$value
+    }
+}
+
+// remove($map , $keys....);
+
+$overallMap: (
+    color1:red,
+    color2:green,
+    color3:yellow,
+);
+
+$newMap: map.remove($overallMap , color1 , color2);
+
+.differ {
+    @each $key , $value in $newMap {
+        color: $value;
+    }
+}

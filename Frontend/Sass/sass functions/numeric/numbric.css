@@ -1,0 +1,41 @@
+p {
+  font-size: 30px;
+  color: 0;
+}
+
+p {
+  border: 24px solid black;
+}
+
+p {
+  padding: 34px 30px;
+}
+
+p {
+  border-left: 35px solid wheat;
+}
+
+span {
+  border: 0.9290195367px solid black;
+  cursor: pointer;
+}
+
+span {
+  font-size: 47px;
+}
+
+span {
+  padding: 10% 10%;
+}
+
+button {
+  font-size: 9px;
+}
+
+i {
+  font-size: 30px;
+}
+
+i {
+  font-size: true;
+}/*# sourceMappingURL=numbric.css.map */

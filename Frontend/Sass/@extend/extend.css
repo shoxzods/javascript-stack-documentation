@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+    @extend дает возможность inheritance от других селекторов.
+    Это означает что мы можем использовать стили у других css селекторв не перезаписывая его ( не рекоменужется использовать 
+    в реальных проектах используйте %placeholder или @mixin вместо него ).
+
+    Она так же работает как %placeholder не перзаписвыает стили:(css)
+
+    .click, .removes {
+            color: red;
+            background: greenyellow;
+            border: none;
+            cursor: pointer;
+    }
+*/
+.click, .removes {
+  color: red;
+  background: greenyellow;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=extend.css.map */

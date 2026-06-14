@@ -1,0 +1,6 @@
+@use "../abstracts/variables" as myColor;
+
+.products {
+    background: myColor.$primaryColor;
+    padding: 40px 0;
+}

@@ -1,0 +1,10 @@
+%sameStyles {
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 5px;
+
+    &:hover {
+        background: silver;
+    }
+}

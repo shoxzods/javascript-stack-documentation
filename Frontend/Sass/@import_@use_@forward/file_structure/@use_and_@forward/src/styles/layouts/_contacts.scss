@@ -1,0 +1,23 @@
+@use "../abstracts/placeholder";
+
+$list: (
+    cards:red,
+    maps:green,
+    icons:yellow
+);
+
+.contacts {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        padding: 20px 0;
+        gap: 50px;
+    }
+
+    @each $key , $value in $list {
+        &__#{$key} {
+            @extend %sameStyles;
+            color: $value;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*
+    & — это ссылка на родительский селектор:
+
+    Она используеься в основе правил BEM ( Base Element Modifier) кторый предотврошает перенаписание классов
+    и с css pseudo классами или елементами.
+
+    Она вызывается внутри parent класса.
+*/
+.icon {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  border: 1px solid black;
+}
+.icon__cards {
+  color: white;
+  background: red;
+}
+.icon__cards--modifier {
+  background: green;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  color: red;
+}
+button::after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 10px;
+  background: green;
+}/*# sourceMappingURL=&_parent_selector.css.map */

@@ -1,0 +1,75 @@
+// ---------------------- Sass List ---------------------------------------- //
+@use "sass:list";
+
+// append($list , $val , $separator ) - в текущий лист добавляет новое занчение и при жтом можно задать separator ( comma , slash , auto , space );
+$list: red green;
+
+div {
+    background: linear-gradient(to left , list.append($list , blue , "comma") );
+}
+
+// index($list , $val) - возвращает индекс заданного щначения внутри list.
+
+div {
+    border: list.index($list , green)*1px solid red;
+}
+
+// length - возврашет длину листа.
+
+div {
+    font-size: list.length($list)*1rem;
+}
+
+// join($list1 , $list2, $separator , $bracketed) - обединяет двух list в одно добавляет separator и [] bracket
+
+$brackets: list.join("type=","text","auto" , true);
+
+input#{$brackets} {
+    color: red;
+}
+
+p {
+    background: linear-gradient(to top , list.join( green red , yellow silver ,"comma" , false));
+}
+
+// nth($list , $n); - возвращает значение из $list смторя на $n - index ( номер порядка ). 
+
+$array: 20px 24px 30px;
+
+@for $i from 1 through 3 {
+    .list__#{$i} {
+        font-size: list.nth($array , $i);
+    }
+}
+
+// set-nth($list, $n, $value) - заменяет значение в list в заданный порядок $n
+
+span {
+    border: list.set-nth( 1px solid green, 3 , red );
+    display: block;
+}
+
+// zip(lists) - обединяет листы по индексам
+$myList:  list.zip(1px 2px 3px , solid dotted dashed , red green yellow);
+
+i {
+    border: list.nth($myList , 2 );
+}
+
+// separator($list) - возвращает какой сеператор был испольщован.
+
+$promts:12 , 23 , 4;
+$isSeperated: list.separator($promts);
+$looks: red green yellow;
+
+em {
+    background: linear-gradient(to left , list.append($looks , null, 'comma')); // comma
+}
+
+// is-bracketed - возвращает true если есть [] Данноые значение
+
+$maps: [a b c];
+
+p {
+    color: list.is-bracketed($maps)
+}

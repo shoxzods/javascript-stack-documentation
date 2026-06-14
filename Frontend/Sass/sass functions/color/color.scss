@@ -1,0 +1,73 @@
+@use "sass:color";
+
+// rgb ( red , green , blue ) - это цвет получится при совмешении red , green ,blue
+
+.rgb {
+    background: rgb(194, 193, 193);
+    padding: 10px;
+}
+
+// rgba ( red , green , blue , alpha ) - это цвет получится при совмешении red , green ,blue и пллюс добаляет прощрачность.
+
+.rgba {
+    background: rgba(194, 193, 193 , 0.2);
+    padding: 10px;
+}
+
+/* hsl ( hue , saturation , ligtness ) - hue - это угол колеса цвета от ( 0 до 360 ) 
+0 or 360 is red, 120 is green, 240 is blue. Saturation это процентный значение;  0% means a shade of gray 
+and 100% is the full color. Lightness is also a percentage; 0% is black, 100% is white.
+*/
+
+.hsl {
+    background: hsl(210, 30%, 80%);
+    padding:10px
+}
+
+/* hsla ( hue , saturation , ligtness , alpha ) - hue - это угол колеса цвета от ( 0 до 360 ) 
+0 or 360 is red, 120 is green, 240 is blue. Saturation это процентный значение;  0% means a shade of gray 
+and 100% is the full color. Lightness is also a percentage; 0% is black, 100% is white + прозрачность.
+*/
+.hsla {
+    background: hsla(210, 30%, 80% , 0.2);
+    padding:10px
+}
+
+// rgba($color , $alpha) - создает новый цвет с заданным alpha каналом.
+
+.rgba {
+    &--differ {
+        background: rgba(hsla(210, 30%, 80% , 0.2), 0.5);
+    }
+}
+
+// adkust:
+
+// RGB каналы
+// color.adjust(#7fffd4, $red: 25);
+// color.adjust(#7fffd4, $green: -10);
+// color.adjust(#7fffd4, $blue: 25);
+
+// HSL
+// color.adjust(#7fffd4, $hue: 80deg);
+// color.adjust(#7fffd4, $saturation: 10%);
+// color.adjust(#7fffd4, $lightness: 10%);
+
+// Прозрачность
+// color.adjust(#7fffd4, $alpha: -0.5);  // прозрачнее
+// color.adjust(#7fffd4, $alpha: 0.5);   // непрозрачнее
+
+// Несколько сразу
+// color.adjust(#7fffd4, $lightness: 10%, $saturation: -20%);
+
+// adjust: дообавляет канал 
+.adjust {
+    padding: 10px;
+    background: color.adjust(#7fffd4 , $hue: 80deg , $saturation: 90% , $lightness: 20% , $alpha: 0.5);
+}
+
+// change: заменет канал
+.change {
+    padding: 10px;
+    background: color.adjust(#7fffd4 , $hue: 80deg , $saturation: 90% , $lightness: 20% , $alpha: 0.5);
+}

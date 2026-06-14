@@ -1,0 +1,26 @@
+// ----------------------- %placeholder-selector ---------------------------------------------------- //
+
+/*
+    placeholder selector используется чтобы переиспользовать компоненты стилей
+    placeholder не дуюдирует код:
+
+    .card , .mycard {
+        background:red,
+        color:white,
+        font-size:34px
+    }
+*/
+
+%samestyle {
+    background: red;
+    color: white;
+    border: 1px solid gray;
+}
+
+.click {
+    @extend %samestyle;
+}
+
+.removes {
+    @extend %samestyle;
+}

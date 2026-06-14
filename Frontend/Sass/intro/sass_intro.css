@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*
+    Sass ( Syntatically Awesome Stylesheet ) это CSS pre-processor.
+    Sass снижает повторение классов и поэтому сохраняет время.
+
+    В Sass есть возможность писать function , variables , imports , inheritance точно как у программных языков
+    и это снижает перенаписание кода.
+
+    В оснвном Sass работает в осное BEM правилы написания классов.
+    Base Element Modifier - и это предотврошает написание классов повторно.
+
+    Base - это самый высший класс , modifier - если у всех компонненты одинаковые стили , Modifier - если есть чуть чуть различие.
+*/
+.base {
+  display: flex;
+  flex-direction: column;
+}
+.base__elements {
+  list-style: none;
+  color: red;
+  font-size: larger;
+}
+.base__elements--modifier {
+  color: green;
+}/*# sourceMappingURL=sass_intro.css.map */

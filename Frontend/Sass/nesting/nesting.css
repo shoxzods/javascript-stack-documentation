@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*
+    Sass позволяет вложить селекторы как мы делаем в HTML
+*/
+div > p > span {
+  border: 1px solid red;
+}
+
+div span {
+  background: green;
+}
+
+div p span {
+  border: 1px solid red;
+}
+
+div span {
+  background: green;
+}
+
+/*
+    Если prefix классов иммет одинаковые названия то можно
+    их записать как nested свойств. К такми свойствам относятся
+    font-family , font-size , font-wight и др.
+*/
+i {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: sans-serif;
+}/*# sourceMappingURL=nesting.css.map */

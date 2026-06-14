@@ -1,0 +1,23 @@
+.contacts {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        padding: 20px 0;
+        gap: 50px;
+    }
+
+    &__cards {
+        @extend %sameStyles;
+        color: red;
+    }
+
+    &__maps {
+        @extend %sameStyles;
+        color: green
+    }
+
+    &__icons {
+        @extend %sameStyles;
+        color: yellow;
+    }
+}

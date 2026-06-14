@@ -1,0 +1,17 @@
+// --------------------------- @if @else if @else ----------------------------  //
+
+/*
+    @if @else if @else - дает возможность писать сравнение данных как на программых языках.
+*/ 
+
+$myColor: green;
+
+.mover {
+    @if $myColor == red {
+        color: red;
+    } @else if $myColor == green {
+        color: green;
+    } @else {
+        color: black;
+    }
+}

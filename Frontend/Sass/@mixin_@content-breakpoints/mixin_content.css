@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+    Данный подход применяется для упрошения написания медиа.
+
+    @content - здесь используется как крчуок чтобы внутри него можно вызвать @include
+*/
+.myButton {
+  background: silver;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.3s;
+  color: white;
+  box-shadow: 1px 1px 2px silver;
+}
+.myButton:active {
+  transform: scale(1.1);
+}
+@media (max-width: 640px) {
+  .myButton {
+    background: red;
+  }
+}/*# sourceMappingURL=mixin_content.css.map */

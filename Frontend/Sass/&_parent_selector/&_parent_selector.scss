@@ -1,0 +1,46 @@
+// --------------------------------- parent selector ----------------------------------------------- //
+
+/*
+    & — это ссылка на родительский селектор:
+
+    Она используеься в основе правил BEM ( Base Element Modifier) кторый предотврошает перенаписание классов
+    и с css pseudo классами или елементами.
+    
+    Она вызывается внутри parent класса.
+*/
+
+// BEM:
+
+.icon {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    border: 1px solid black;
+
+    &__cards {
+        color: white;
+        background: red;
+        
+        &--modifier {
+            background: green;
+        }
+    }
+}
+
+// pseudo classes and pseudo elements:
+button {
+    cursor: pointer;
+
+    &:hover {       // pseudo-class
+        color: red;
+    }
+
+    &::after {    // pseudo-element
+        content:"";
+        display: block;
+        height:10px;
+        width:10px;
+        background: green;
+    }
+}

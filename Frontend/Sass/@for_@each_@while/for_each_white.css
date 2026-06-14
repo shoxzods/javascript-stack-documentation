@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/*
+    @for , @each , @while используется для автоматизации перенаписания одинаковых классов.
+*/
+.list__first {
+  color: red;
+  list-style: none;
+  transition: 0.1s all;
+  padding: 4px;
+}
+.list__first:hover {
+  background: silver;
+  cursor: pointer;
+}
+
+.list__second {
+  color: red;
+  list-style: none;
+  transition: 0.1s all;
+  padding: 4px;
+}
+.list__second:hover {
+  background: silver;
+  cursor: pointer;
+}
+
+.list__third {
+  color: red;
+  list-style: none;
+  transition: 0.1s all;
+  padding: 4px;
+}
+.list__third:hover {
+  background: silver;
+  cursor: pointer;
+}
+
+.ol__red {
+  color: red;
+  list-style: none;
+}
+
+.ol__green {
+  color: green;
+  list-style: none;
+}
+
+.ol__blue {
+  color: blue;
+  list-style: none;
+}
+
+.btn-sm {
+  font-size: 8px;
+  padding: 4px;
+}
+
+.btn-md {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.btn-lg {
+  font-size: 24px;
+  padding: 12px;
+}
+
+.block {
+  display: flex;
+  gap: 10px;
+}
+
+.block__1 {
+  color: red;
+  font-size: 1rem;
+}
+
+.block__2 {
+  color: red;
+  font-size: 2rem;
+}
+
+.block__3 {
+  color: red;
+  font-size: 3rem;
+}
+
+.i_1 {
+  color: red;
+}
+
+.i_3 {
+  color: red;
+}
+
+.i_1 {
+  background: red;
+}
+
+.i_2 {
+  background: green;
+}
+
+.i_3 {
+  background: blue;
+}
+
+.mall_1 {
+  color: #3498db;
+}
+
+.mall_3 {
+  color: #e74c3c;
+}
+
+.mall_1 {
+  padding: 8px;
+  font-size: 4px;
+  background: green;
+}
+
+.mall_2 {
+  padding: 16px;
+  font-size: 8px;
+  background: green;
+}
+
+.mall_3 {
+  padding: 24px;
+  font-size: 12px;
+  background: green;
+}/*# sourceMappingURL=for_each_white.css.map */

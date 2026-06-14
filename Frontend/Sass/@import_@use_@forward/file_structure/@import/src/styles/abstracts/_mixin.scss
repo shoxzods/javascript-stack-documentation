@@ -1,0 +1,8 @@
+@mixin cardsStyle($color , $direction) {
+    background: $color;
+    transition: 0.5s;
+
+    &:hover {
+        transform: translateY($direction);
+    }
+}

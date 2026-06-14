@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*
+    @function используется напсиания логики внутри него и испольщовать повторно:
+
+    @return используется чтобы возврашать значение 
+
+*/
+.sameBtn {
+  border: 10px solid red;
+  font-size: 40px;
+}/*# sourceMappingURL=functions.css.map */

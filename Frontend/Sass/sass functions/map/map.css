@@ -1,0 +1,41 @@
+p {
+  color: green;
+}
+
+p {
+  font-size: 40px;
+}
+
+p {
+  height: 16px;
+  border: 1px solid red;
+  width: 40px;
+}
+
+span {
+  color: red;
+}
+
+.list-color1 {
+  color: red;
+}
+
+.list-color2 {
+  color: green;
+}
+
+.list-color3 {
+  color: blue;
+}
+
+.list-color4 {
+  color: silver;
+}
+
+.list-color5 {
+  color: black;
+}
+
+.differ {
+  color: yellow;
+}/*# sourceMappingURL=map.css.map */

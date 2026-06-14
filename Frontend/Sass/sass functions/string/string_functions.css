@@ -1,0 +1,33 @@
+p::before {
+  content: "before";
+}
+
+p {
+  background: linear-gradient(to left, red , green , blue);
+}
+
+p {
+  font-size: 6rem;
+}
+
+b::after {
+  content: "after";
+}
+
+b::before {
+  content: "BREFORE";
+}
+
+b {
+  color: red;
+}
+
+b {
+  background: linear-gradient(to top, red,blue , green);
+  padding: 10px;
+}
+
+div {
+  margin-top: 20px;
+  color: red;
+}/*# sourceMappingURL=string_functions.css.map */

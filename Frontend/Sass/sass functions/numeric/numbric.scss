@@ -1,0 +1,69 @@
+// numeric functions:
+@use "sass:math";
+
+// abs($number) - сделает отрицательное циру положительным
+$minus-number: -30;
+p {
+    font-size: math.abs($minus-number*1px);
+    color:abs($number: 0)
+}
+
+// ceil($number) - возвращает наибольшее целове чилсо после округлении.
+p {
+    border: math.ceil(23.4)*1px solid black;
+}
+
+// floor($number) - возврашает наименшее целоуе число полсе округлении.
+
+$float: 34.9;
+$floats: 30.9;
+
+p {
+    padding: math.floor($float)*1px math.floor($floats)*1px;
+}
+
+// round($number) - возвращает окргленное чилсо дробсного чилса.
+
+p {
+    border-left: math.round($float*1px) solid wheat;
+}
+
+// random() - возвращает рандомное число от 0 до 1
+
+span {
+    border: math.random()*1px solid black;
+    cursor: pointer;
+}
+
+// random($number) - возвращает чисдо от 0 до число $number:
+
+span {
+    font-size: math.random(100)*1px;
+}
+
+// precentage($number) - обертывает номер в процент.
+
+@function percentage($number) {
+    @return math.percentage($number)
+}
+
+span {
+    padding: percentage(0.1) percentage(0.1);
+}
+
+// min($numbers) - возвращает самое мальенкое число из списка.
+
+button {
+    font-size: math.min(30 , 20, 13 , 9)*1px;
+}
+
+// max($numbers) - возвращает само болoое число из списка.
+
+i {
+    font-size: math.max(30 , 20, 13 , 9)*1px;
+}
+
+// compatible($number1 , $number2) возвращает true если два аргмента сравнимы.
+i {
+    font-size: math.compatible(15px , 10px);
+}

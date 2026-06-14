@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/*
+    @mixin - помогает периспользовать компоненты для разных классов в website.
+    @include - чтобы вызвать @mixin мы используем @include.
+*/
+.click {
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close {
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px greenyellow, -1px -1px 10px greenyellow;
+}
+
+.click {
+  color: red;
+}
+
+.close {
+  color: blue;
+}/*# sourceMappingURL=mix-in.css.map */

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*
+    placeholder selector используется чтобы переиспользовать компоненты стилей
+    placeholder не дублирует код в отличе от @mixin:
+
+    .card , .mycard {
+        background:red,
+        color:white,
+        font-size:34px
+    }
+*/
+.removes, .click {
+  background: red;
+  color: white;
+  border: 1px solid gray;
+}/*# sourceMappingURL=placeholder-selector.css.map */

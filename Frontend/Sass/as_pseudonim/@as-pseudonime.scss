@@ -1,0 +1,57 @@
+// --------------------------- as pseudonime ---------------------------------------------- //
+
+/*
+    as псевдоним используется для вызова конкретной функции из другиз файлов через @use
+*/
+
+// Существует три вида импортировнаия
+
+// c префиксом
+/*
+    импортированный файл сам себе является префиксом
+    и для использования функции нужна вызвать с перфиксом.
+*/
+
+@use "./variables";
+@use "./variables" as *;
+@use "./variables" as prefixname;
+
+p {
+    color: variables.$color;
+    @extend %placeholder;
+    @include variables.myButton(center);
+    cursor: variables.cursor(pointer);
+}
+
+
+// c псевдонимом as *
+/*
+    С псевдонимом as * - нам не приходится вызвать как property
+    а просто назвать название функции.
+*/
+
+span {
+    color: $color;
+    @extend %placeholder;
+    @include myButton(center);
+    cursor: cursor(pointer);
+}
+
+// c псевдонимом as prefixname
+/*
+    также prefix as prefixname - дает возможность писать свои кастомные названия префикл вместо имя файла.
+*/
+
+span {
+    color: $color;
+    @extend %placeholder;
+    @include myButton(center);
+    cursor: cursor(pointer);
+}
+
+button {
+    color: prefixname.$color;
+    @extend %placeholder;
+    @include prefixname.myButton(center);
+    cursor:  prefixname.cursor(pointer);
+}
