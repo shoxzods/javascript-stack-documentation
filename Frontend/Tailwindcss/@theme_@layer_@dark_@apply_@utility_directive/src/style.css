@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-color:red;
+}
+
+@layer components {
+  .myButton {
+    background: transparent;
+    border: 1px solid silver;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 5px;
+  }
+
+  .yourBtn {
+    @apply bg-transparent  cursor-pointer rounded-xs p-1.25
+  }
+}
+
+@layer base {
+    html {
+      font-size: 100px;
+      color:white
+    }
+}
+
+@utility transformations {
+    transform: translateX(300px)
+}
+
+@variant dark (&:where(.dark, .dark *));

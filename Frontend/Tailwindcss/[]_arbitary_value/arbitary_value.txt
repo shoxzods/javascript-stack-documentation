@@ -1,0 +1,5 @@
+1.[] - arbitary value дает нам кастомуную величину для utilities.
+text-[200px] -> font-size:200px
+
+2.[] - через arbitary value можно написать shorthand:
+p-[10px_40px] - padding:10px 40px

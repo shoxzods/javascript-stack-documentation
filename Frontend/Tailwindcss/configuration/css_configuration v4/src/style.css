@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {                
+  --color-reddish:green;
+}
+
+@layer components { /* components class */
+    .myButton {
+      background: transparent;
+      border: 1px solid silver;
+      color: rgb(205, 205, 205);
+      cursor: pointer;
+    }
+}
+
+@layer base { /* base  */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    font-family:cursive;
+  }
+}
+
+@utility fonts {  /* utility class */
+  font-size:100px
+}
+
+@variant dark (&:where(.dark, .dark *));  /* dark mode */

@@ -1,0 +1,44 @@
+// ---------------------------------  Installling -------------------------------------------------------------------------- //
+
+/*
+    Есть несколько способов установки tailwindcss:
+
+    CDN
+    Vite
+    PostCSS
+    CLI
+*/
+
+// CDN - самый быстрый способ сборки проекта работает во всех версиях talwindcss и используется для изучения или маельнких проектах. + конфигурация(tailwind.config.js)
+/*
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+*/
+
+// Для версии v4 самый популярный способ это vite ( сборшик ) и postcss / конфигурация расположено в css
+/*
+    #vite хорошо работает с React Router: ( vite способ раюотает только с vite сборщиком )
+        npm create vite@latest filename (.) // установка сборшика vite
+        npm install tailwindcss @tailwindcss/vite // установка tailwindcss
+
+    #postcss хорошо работает с Next.js:
+        npm create vite@latest filename (.) // установка сборшика vite
+        npm install tailwindcss @tailwindcss/postcss postcss
+
+        ... Без сборщика:
+        npm install tailwindcss @tailwindcss/postcss postcss postcss-cli
+*/
+
+
+// Для версии v3 самый популярный собсоб это postcss ( обработчик ) + конфигурация(tailwind.config.js)
+/*
+    ...без сборшика
+    npm install -D tailwindcss@3 postcss autoprefixer // установка autoprefixer и tailwindcssV3
+    npx tailwindcss init // создание конфигурации(tailwind.config.js);
+    npx tailwindcss init -p // создание конфигурации(postcss.config.js);
+
+    ... со сборшиком vite:
+    npm create vite@latest filename(.)
+    npm install -D tailwindcss@3 postcss autoprefixer // установка autoprefixer и tailwindcssV3
+    npx tailwindcss init // создание конфигурации(tailwind.config.js);
+    npx tailwindcss init -p // создание конфигурации(postcss.config.js);
+*/
