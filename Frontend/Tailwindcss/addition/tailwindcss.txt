@@ -1,0 +1,59 @@
+// rgba(red , green , blue , alpha)
+/*
+    В tailwindcss нету rgba и чтобы настроить его надо посатвить 
+    / number - slash:
+
+    text-red-300/50 - alpha (50%)
+*/
+
+// pseudo classes and pseudo elements
+/*
+    пишется как prefix:
+        <p class="hover:text-red-400"></p> // pseudo-class
+        <p class="before:content-['some_text']"></p> // pseudo-element
+*/
+
+// @keyframes:
+css:
+
+@theme {
+  --animate-myAnimation: changeColor 1s ease-in infinite;
+}
+
+@keyframes changeColor {
+  from {
+    color:red;
+  }
+
+  to {
+    color: green;
+  }
+}
+
+js:
+
+theme: {
+    extend: {
+      keyframes: {
+         changeColor: {
+            from:{
+                color:"red"
+            },
+
+            to: {
+              color:"green"
+            }
+         }
+      },
+
+      animation: {
+        changeColor: "changeColor 1s infinite ease-in",
+      }
+    },
+  },
+
+
+/* html */
+/* 
+  <p class="animate-myAnimation">lorem</p>
+*/

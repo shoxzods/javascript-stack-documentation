@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-myAnimation: myButton 1s ease-in infinite;
+}
+
+@keyframes myButton {
+  from {
+    color:red;
+  }
+
+  to {
+    color: green;
+  }
+}
+
