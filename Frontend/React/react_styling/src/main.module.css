@@ -1,0 +1,12 @@
+:global(.global) {
+    background: gray;
+}
+
+.changeColor {
+    color: red;
+}
+
+.personalColor {
+    composes: changeColor;
+    font-size: 40px;
+}

@@ -1,0 +1,14 @@
+1. i18next - библиотека для многоязычности
+2. - react-chartjs-2 - библиотека для графов , чартов и тд.
+     - bar
+     - line
+     - doughnut
+
+3. zustand - библиотека для state management.
+4. redux-toolkit - библиотека для state management.
+5. formik / react-hook-form  - библиотеки для валидации.
+6. Material UI / Ant Design
+7. react-router-dom / Next.js - framework.
+8.styled-components - библиотека для сохдания новых тегов.
+
+for both: js and jsx;

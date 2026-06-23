@@ -42,7 +42,72 @@ function App() {
 
 // ...rest operator
 /*
-    rest  оператор нужен когда мы не знаем сколько props приходит из parent Component
+    rest  оператор нужен когда мы не знаем сколько props приходит из parent Component:
+*/
+
+function Child({...rest}) {
+    return (
+        <p>{rest.text}</p>
+    )
+}
+
+function Parent() {
+    return (
+        <Child myText = {salom} />
+    )
+}
+
+// Если передать ...rest опреатор для атриубтов он унаследует и property и его value.
+function Sibling({...rest}) {
+    return (
+        <p {...rest}>Lorem.</p>
+    )
+}
+
+function Ancesstor() {
+    return (
+        <Sibling title="some text"  />
+    )
+}
+
+
+// Children Props
+/*
+    children porps помогает расположить Node Element из Parent компонента.
 */
 
 
+function Home(props) {
+    return (
+        <div>
+            {props.children}
+        </div>
+    )
+}
+
+function App() {
+    return (
+        <Home>
+            <p>Lorem.</p>
+        </Home>
+    )
+}
+
+
+// children через destructuring.
+
+function Home({children}) {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+
+function App() {
+    return (
+        <Home>
+            <p>Lorem.</p>
+        </Home>
+    )
+}

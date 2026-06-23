@@ -1,0 +1,5 @@
+yup ( js ) - библиотека для валидации
+zod ( ts ) - библиотека используется для валидации.
+chart.js , google chart , Ploty js - библиотека
+axios(js) - библиотека для запрос данных ( REST API );
+leaflet (js) - библиотека для maps.
