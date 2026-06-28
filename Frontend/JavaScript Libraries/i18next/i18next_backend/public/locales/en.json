@@ -1,0 +1,6 @@
+{
+    "dir": {
+        "left":"left {{side}}",
+        "right":"right {{side}}"
+    }
+}
