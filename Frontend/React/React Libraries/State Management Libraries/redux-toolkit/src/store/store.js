@@ -1,12 +1,25 @@
+// persist:
+import {persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/es/storage";
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./features/counter/counterSlice";
-import userReducer from "./features/user/userSlice";
+import counterReducer from "./features/counterSlice";
+import { api } from "./api";
 
-const store = configureStore({
+
+const persistConfig = {
+    key:"index",
+    storage
+};
+
+const persistedReducer = persistReducer( persistConfig , counterReducer );
+
+export const store =  configureStore({
     reducer: {
-        counter: counterReducer,
-        user: userReducer,
-    }
+        counter: persistedReducer,
+        [api.reducerPath]: api.reducer
+    },
+
+    middleware: (getDefault) => getDefault({ serializableCheck:false }).concat(api.middleware)
 });
 
-export default store;
+export const persistor = persistStore(store);

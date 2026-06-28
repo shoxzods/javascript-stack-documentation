@@ -1,66 +1,78 @@
-/*
-  useSelector - используется для того чтобы брать данные из селектора.
-
-  useDispatch - используется для того чтоыб задать reducer.
-*/ 
-
 import { useSelector , useDispatch } from "react-redux";
-
-// Slicer
-import { changeState, decrement, increment } from "./store/features/counter/counterSlice";
-import { changeData } from "./store/features/user/userSlice";
+import { increment, double , fetchUsers } from "./store/features/counterSlice";
+import { useEffect } from "react";
+import { useGetUsersQuery , useGetUsersByIdQuery , useCreateUserMutation } from "./store/api";
 
 export default function App() {
-  const dispatch = useDispatch();
-  
-  // counter
-  const counter = useSelector((state) => state.counter.counter );
-  const name = useSelector((state) => state.counter.name );
+    const count = useSelector( (state) => state.counter.count);
+    const err = useSelector( ( state) => state.counter.error );
+    const load = useSelector( ( state ) => state.counter.loading);
+    const datas = useSelector( ( state ) => state.counter.data );
 
-  // user:
-  const info = useSelector( (state) => state.user.info );
+    // use Query:
+    
+    // all:
+    const { data: allusers , isLoading, error} = useGetUsersQuery();
 
-  function actions(action) {
-    switch(action) {
-      case "plus":
-        return dispatch(increment())
+    // by id:
+    const { data: userId , isLoading: loading } = useGetUsersByIdQuery(4);
 
-      case "minus":
-        return dispatch(decrement())
+    // post:
+    const [ createUser ] = useCreateUserMutation();
 
-      case "change":
-        return dispatch(changeState(action))
+     async function postData() {
+      const result = await createUser({
+        name: "John Doe",
+        email: "john@mail.com",
+        username: "johndoe"
+      });
+
+      console.log(result.data , result.error)
     }
-  }
 
-  function changes( name , values ) {
-    const obj = {};
-    obj[name] = values;
-    dispatch(changeData(obj))
-  }
 
-  return (
-    <>
-      <p>{ counter }</p>
-      <p>{ name }</p>
+    const dispatch = useDispatch();
 
-      <div>
-        <p>{ info.age }</p>
-        <p>{ info.first_name }</p>
-        <p>{ info.last_name }</p>
-      </div>
+    useEffect(() => {
+      dispatch(fetchUsers());
+    } , []);
 
-      <button onClick={(e) => actions(e.target.name)} name="plus">+</button>
-      <button onClick={(e) => actions(e.target.name)} name="minus">-</button>
-      <button onClick={(e) => actions(e.target.name)} name="change">change</button>
+    return (
+      <>
+        <p>{count}</p>
+        <button onClick={() => {
+            dispatch( increment() )
+        }}>increment</button>
+        <button onClick={() => {
+          dispatch( double(+3) )
+        }}>decrement</button>
 
-      <h1>Form:</h1>
-      <form style={{ marginTop:"20px" , display:"flex" , flexDirection:"column" , maxWidth:"1200px" , gap:"10px" }}>
-          <input onChange={(e) => changes(e.target.name , e.target.value) } name="first_name" type="text" />
-          <input onChange={(e) => changes(e.target.name , e.target.value) } name="last_name" type="text" />
-          <input onChange={(e) => changes(e.target.name , e.target.value) } name="age" type="number" />        
-      </form>  
+        <div style={{border:"1px solid red"}}>
+            { isLoading ? <p>...loading</p> 
+                      : err ? err
+                      : datas ? datas.map( user => <p key={user.id}>{user.name}</p> )
+                      :""  
+                    }
+        </div>
+      
+        {/* GET method */}
+        <div style={{border:"1px solid red" , marginTop:'10px'}}>
+            { isLoading ? <p>...loading</p> 
+                      : error ? error.message
+                      : allusers ? allusers.map( user => <p key={user.id}>{user.name}</p> )
+                      :""  
+                    }
+        </div>
+        
+        {/* GET method width paramatrs */}
+        <div style={{border:"1px solid red" , marginTop:'10px'}}>
+          <p>{ loading ? "loading" : userId?.name }</p>
+        </div>
+      
+         {/* post */}
 
-    </>
-  )
+         <button onClick={postData}>send</button>
+      </>
+ 
+    )
 }
