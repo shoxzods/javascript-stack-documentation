@@ -51,6 +51,7 @@ rm file.txt - для удаления файла.
 rm -rf folder/ - для удаления folder.
 cd ./pathname - для перехода к конкретным файлам
 code . - откроет vscode
+exit - чтобы выйти из терминалаю-.
 
 
 <!-- git files -->
